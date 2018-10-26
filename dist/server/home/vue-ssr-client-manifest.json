@@ -1,0 +1,37 @@
+{
+  "publicPath": "/dist/",
+  "all": [
+    "js/vendor/lib.js",
+    "js/home/app.js",
+    "js/manifest.js"
+  ],
+  "initial": [
+    "js/manifest.js",
+    "js/vendor/lib.js",
+    "js/home/app.js"
+  ],
+  "async": [],
+  "modules": {
+    "3b6963e0": [
+      0
+    ],
+    "5e102053": [
+      0
+    ],
+    "029e8986": [
+      1
+    ],
+    "5dc61a1e": [
+      0
+    ],
+    "4313f76e": [
+      0
+    ],
+    "506d37c2": [
+      0
+    ],
+    "7d0f1e1e": [
+      0
+    ]
+  }
+}
