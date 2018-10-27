@@ -19,7 +19,7 @@ for (let name in page) {
 
     clientConfigMap[name] = merge({}, clientConfig, {
         entry: {
-            [page[name].pathName]: page[name].clientEntryPath
+            [name]: page[name].clientEntryPath
         },
         output: {
             filename: `js/[name].js` //dist目录

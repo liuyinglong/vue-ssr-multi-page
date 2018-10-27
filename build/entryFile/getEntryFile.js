@@ -76,6 +76,6 @@ let getEntryFile = function (dir) {
     return entryFile
 }
 
-module.exports = getEntryFile("D:/company/chefuzhinengClient/src/page/*/*.js")
+module.exports = getEntryFile("C:/Users/focus/Desktop/vue-ssr-multi-page/src/page/*/*.js")
 
 

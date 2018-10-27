@@ -16,14 +16,16 @@ for (let pageName in entryFile.page) {
         templatePath: baseTemplatePath,
         serverConfig: serverConfigMap[pageName],
         clientConfig: clientConfigMap[pageName],
+        pageName: pageName,
         cb: function (bundle, options, pageName) {
-            delete options.clientManifest
-            rendererMap[pageName] = createRenderer(bundle, Object.assign(options, {
-                inject: false
-            }))
+            rendererMap[pageName] = createRenderer(bundle, options)
         }
+
     })
 }
+
+console.log(rendererMap)
+
 
 function createRenderer(bundle, options) {
     // https://github.com/vuejs/vue/blob/dev/packages/vue-server-renderer/README.md#why-use-bundlerenderer
@@ -61,6 +63,8 @@ function render({req, res, pageName}) {
         title: '标题', // default title
         url: req.url
     }
+
+
     rendererMap[pageName].renderToString(context, (err, html) => {
         if (err) {
             return handleError(err)
@@ -70,7 +74,9 @@ function render({req, res, pageName}) {
 }
 
 for (let pageName in entryFile.page) {
-    app.get(entryFile.page[pageName].pathName, (function (pageName) {
+    let route = "/" + entryFile.page[pageName].pathName
+    console.log(route)
+    app.get(route, (function (pageName) {
         return function (req, res) {
             promiseMap[pageName].then(() => {
                 render({req, res, pageName})

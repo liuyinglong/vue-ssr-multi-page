@@ -1,6 +1,10 @@
 <template>
-	<div>45</div>
+<div id="app">
+	<div>111</div>
+	<div>11</div>
+	<div>11</div>
 	<cf-button></cf-button>
+</div>
 </template>
 
 <script>
