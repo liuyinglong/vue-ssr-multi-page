@@ -76,6 +76,6 @@ let getEntryFile = function (dir) {
     return entryFile
 }
 
-module.exports = getEntryFile(path.resolve(__dirname,"../../src/page"))
+module.exports = getEntryFile(path.resolve(__dirname,"../../src/page/*/*.js"))
 
 

@@ -8,7 +8,6 @@ let config = merge(base, {
     devtool: '#source-map',
 
     output: {
-        filename: 'server-bundle.js',
         libraryTarget: 'commonjs2'
     },
     resolve: {

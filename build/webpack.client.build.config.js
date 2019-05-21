@@ -15,7 +15,20 @@ const config = merge(base, {
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
             'process.env.VUE_ENV': '"client"'
         })
-    ]
+    ],
+
+    optimization: {
+        splitChunks: {              //提取公共模块
+            cacheGroups: {
+                vendor: {
+                    name: 'vendors/vendors',
+                    chunks: 'all',
+                    minChunks: 3,    //分割前必须共享模块的最小块数
+                    reuseExistingChunk: true
+                }
+            }
+        }
+    },
 })
 
 

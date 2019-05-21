@@ -13,11 +13,7 @@ webpackClientBuildConfig.output.filename = "public/js/[name].js"
 
 //提取公共文件
 let chunks = Object.keys(entryPage.clientEntry)
-webpackClientBuildConfig.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-    name: `vendors/vendors`,
-    minChunks: 3,
-    chunks: chunks
-}))
+
 
 let buildConfig = {}
 //生成模板文件配置
